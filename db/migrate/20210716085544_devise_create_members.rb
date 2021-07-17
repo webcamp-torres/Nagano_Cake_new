@@ -38,7 +38,7 @@ class DeviseCreateMembers < ActiveRecord::Migration[5.2]
       t.string :phone_number, null: false
       t.string :postal_code, null: false
       t.string :address, null: false
-      t.boolean :unsbscribe_status, null: false, default: false
+      t.boolean :unsubscribe_status, null: false, default: false
       t.timestamps null: false
 
       t.timestamps null: false
