@@ -1,6 +1,24 @@
 Rails.application.routes.draw do
+      root to: 'homes#top'
+      get '/about' => 'homes#about'
+
+      resources :items
+      resources :members
+      resources :cart_items
+      resources :orders
+      resources :deliveries
+    get 'searches' => 'searches#search'
+
+
     namespace :admin do
+      resources :items, except: [:destroy]
+      resources :orders, only: [:show, :update]
+      resources :genre, only: [:index, :create, :edit, :update]
+      resources :members, only: [:index, :show, :edit, :update]
+      resources :order_items, only: [:update]
+      get 'searches' => 'searches#search'
    end
+
      devise_for :admins, controllers: {
        sessions:      'admins/sessions',
        passwords:     'admins/passwords',
@@ -11,7 +29,5 @@ Rails.application.routes.draw do
        passwords:     'members/passwords',
        registrations: 'members/registrations'
      }
-     get 'homes/top'
-     root to: 'homes#top'
 
 end
