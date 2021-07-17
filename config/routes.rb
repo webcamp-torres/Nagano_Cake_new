@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
       root to: 'homes#top'
-      get '/about' => 'homes#about'
 
+    scope module: 'public' do
+      get '/about' => 'homes#about'
       resources :items
       resources :members
       resources :cart_items
       resources :orders
       resources :deliveries
-    get 'searches' => 'searches#search'
+      get 'searches' => 'searches#search'
+    end
 
 
     namespace :admin do
