@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <p>ジャンル一覧・新規登録</p>
+      <p>ジャンル一覧・新規登録</p><br>
     </div>
   </div>
 
@@ -11,7 +11,7 @@
       <div class="col-3"><%= f.text_field :name %></div>
       <div class="col-3"><%= f.submit '新規登録', class: "btn btn-success" %></div>
     </div>
-<% end %>
+<% end %><br>
 
 <table class="table">
         <thead class="thead-light">
@@ -24,7 +24,7 @@
           <% @genres.each do |g| %>
           <tr>
             <td scope="col-3"><%= g.name %></td>
-       　     <%= link_to g.name, searches_path('search[value]': @genre.id, 'search[how]': "match") %>
+         <!--%= link_to g.name, searches_path('search[value]': @genre.id, 'search[how]': "match") %>-->
             <td scope="col-4"><%= link_to '編集する', edit_admin_genre_path(g.id), class: "btn btn-success" %></td>
           </tr>
           <% end %>
