@@ -9,7 +9,7 @@
           <ul class="nav navbar-nav ml-auto">
             <% if member_signed_in? %>
               <li class="header-name">
-                ようこそ、<%= full_name(current_customer) %>さん！
+                ようこそ、<%= last_namefirst_name(current_member) %>さん！
               </li>
               <li><%= link_to "マイページ", members_path(current_customer), class: "nav-item"%></li>
               <li><%= link_to "商品一覧", items_path, class: "nav-item"%></li>
