@@ -9,10 +9,10 @@ class Genre < ApplicationRecord
     }
     validates :name, presence: true
 
-    include ActiveModel::Model
-    include ActiveModel::Attributes
+    # include ActiveModel::Model
+    # include ActiveModel::Attributes
 
-    attribute :body, :string
+    # attribute :body, :string
 
   def self.search_for(content, method)
     if method == 'perfect'
