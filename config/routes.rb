@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   get 'search/search'
       root to: 'homes#top'
+  devise_for :members, controllers: {
+       sessions:      'members/sessions',
+       passwords:     'members/passwords',
+       registrations: 'members/registrations'
+     }
 
     scope module: 'public' do
       get '/about' => 'homes#about'
@@ -27,10 +32,6 @@ Rails.application.routes.draw do
        passwords:     'admins/passwords',
        registrations: 'admins/registrations'
      }
-     devise_for :members, controllers: {
-       sessions:      'members/sessions',
-       passwords:     'members/passwords',
-       registrations: 'members/registrations'
-     }
+     
 
 end
