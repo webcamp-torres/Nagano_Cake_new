@@ -1,8 +1,9 @@
-<div class="search-form">
-  <%= form_with url: searches_path, method: :get, local: true do |f| %>
-    <%= f.text_field :content %>
-    <%= f.select :model, options_for_select({ "Genre" => "genre", "Item" => "item" }) %>
-    <%= f.select :method, options_for_select({ "完全一致" => "perfect", "前方一致" => "forward", "後方一致" => "backward", "部分一致" => "partial" }) %>
-    <%= f.submit '検索' %>
-  <% end %>
+<div class="item-search">
+    <%= form_with url: searches_path, method: :get, local: true do |f| %>
+       <%= f.text_field 'search[value]', size: "26x4" %><br>
+         <span class="search-button col-xs-12 text-right">
+           <%= f.select 'search[how]', options_for_select({ "部分一致" => "partical", "前方一致" => "forward", "後方一致" => "backward", "完全一致" => "match" }) %>
+           <%= f.submit :"Search" %>
+         </span>
+    <% end %>
 </div>

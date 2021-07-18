@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     namespace :admin do
       resources :items, except: [:destroy]
       resources :orders, only: [:show, :update]
-      resources :genre, only: [:index, :create, :edit, :update]
+      resources :genres, only: [:index, :create, :edit, :update]
       resources :members, only: [:index, :show, :edit, :update]
       resources :order_items, only: [:update]
       get 'searches' => 'searches#search'
