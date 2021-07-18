@@ -11,7 +11,7 @@
               <li class="header-name">
                 ようこそ、<%= last_namefirst_name(current_member) %>さん！
               </li>
-              <li><%= link_to "マイページ", members_path(current_customer), class: "nav-item"%></li>
+              <li><%= link_to "マイページ", members_path(current_member), class: "nav-item"%></li>
               <li><%= link_to "商品一覧", items_path, class: "nav-item"%></li>
               <li><%= link_to "カート", members_cart_items_path, class: "nav-item"%></li>
               <li><%= link_to "ログアウト", destroy_members_session_path, method: :delete, class: "nav-item"%></li>
