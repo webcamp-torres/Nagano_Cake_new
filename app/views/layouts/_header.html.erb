@@ -1,0 +1,34 @@
+ <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/"><span>Nagano Cake</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="nav navbar-nav navbar-right">
+            <% if member_signed_in? %>
+              <li class="header-name">
+                ようこそ、<%= last_name,first_name(current_customer) %>さん！
+              </li>
+              <li><%= link_to "マイページ", members_path(current_customer), class: "nav-item"%></li>
+              <li><%= link_to "商品一覧", items_path, class: "nav-item"%></li>
+              <li><%= link_to "カート", members_cart_items_path, class: "nav-item"%></li>
+              <li><%= link_to "ログアウト", destroy_members_session_path, method: :delete, class: "nav-item"%></li>
+            <% elsif admin_signed_in? %>
+            　<li><%= link_to "商品一覧", admin_items_path, class: "nav-item"%></li>
+            　<li><%= link_to "会員一覧", admin_members_path, class: "nav-item"%></li>
+            　<li><%= link_to"注文履歴一覧", admin_orders_path, class: "nav-item"%></li>
+            　<li><%= link_to"ジャンル一覧", admin_genres_path, class: "nav-item"%></li>
+            　<li><%= link_to"ログアウト", destroy_admin_session_path, method: :delete, class: "nav-item"%></li>
+            <% else %>
+              <li><%= link_to "About", home_about_path,class: "nav-item"%></li>
+              <li><%= link_to "商品一覧", products_path, class: "nav-item"%></li>
+              <li><%= link_to "新規登録", new_member_registration_path, data: {"turbolinks" => false}, class: "nav-item"%></li>
+              <li><%= link_to "ログイン", new_customer_session_path, class: "nav-item"%></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+ </header>
