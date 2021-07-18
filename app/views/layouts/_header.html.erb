@@ -23,9 +23,9 @@
             　<li><%= link_to"ログアウト", destroy_admin_session_path, method: :delete, class: "nav-item"%></li>
             <% else %>
               <li><%= link_to "About", home_about_path,class: "nav-item"%></li>
-              <li><%= link_to "商品一覧", products_path, class: "nav-item"%></li>
+              <li><%= link_to "商品一覧", items_path, class: "nav-item"%></li>
               <li><%= link_to "新規登録", new_member_registration_path, data: {"turbolinks" => false}, class: "nav-item"%></li>
-              <li><%= link_to "ログイン", new_customer_session_path, class: "nav-item"%></li>
+              <li><%= link_to "ログイン", new_member_session_path, class: "nav-item"%></li>
             <% end %>
           </ul>
         </div>
