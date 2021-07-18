@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'search/search'
   post "/admin/items/admin_items_path" => "items#index"
       root to: 'homes#top'
+  
   devise_for :members, controllers: {
        sessions:      'members/sessions',
        passwords:     'members/passwords',
