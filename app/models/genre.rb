@@ -1,7 +1,14 @@
 class Genre < ApplicationRecord
     has_many :items, dependent: :destroy
+
+    enum genre:{
+     ケーキ: 0,
+     プリン: 1,
+     焼き菓子: 2,
+     キャンディ: 3
+    }
     validates :name, presence: true
-    
+
     include ActiveModel::Model
     include ActiveModel::Attributes
 

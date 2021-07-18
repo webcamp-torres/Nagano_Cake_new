@@ -19,7 +19,13 @@
          </tbody>
         </table>
        <div class="item-list">
-        繰り返し表示
+         <% items.each do |item| %>
+           <tr>
+              <%= attachment_image_tag(book.user, :image, :fill, 50, 50, fallback: "no-image-icon.jpg") %>
+              <%= item.name %>
+              <%= item.introduction %>
+           </tr>
+         <% end %>
        </div>
      </div>
     </div>

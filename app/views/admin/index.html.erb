@@ -1,0 +1,9 @@
+<div class="item-list">
+        <% items.each do |item| %>
+      <tr>
+          <%= attachment_image_tag(book.user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg") %>
+          <%= item.name %>
+          <%= item.introduction %>
+      </tr>
+    <% end %>
+</div>
