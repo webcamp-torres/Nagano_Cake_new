@@ -1,23 +1,27 @@
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">商品ID</th>
-      <th scope="col">商品名</th>
-      <th scope="col">税抜価格</th>
-      <th scope="col">ジャンル</th>
-    </tr>
-  </thead>
-  <tbody>
-    <div class="item-list">
-      <% @items.each do |item| %>
-        <tr>
-          <th scope="row"><%= item.id %></th>
-          <td><%= item.name %></td>
-          <td><%= item.price %></td>
-          <td><%= item.genre.name %></td>
-          <!--<td>%= sales_status </td>--->
-        </tr>
-      <% end %>  
-    </div>
-  </tbody>
-</table>
+ <div class="mx-5">
+  <table class="table">
+   <thead class="thead-light">
+     <tr>
+       <th scope="col">商品ID</th>
+       <th scope="col">商品名</th>
+       <th scope="col">税抜価格</th>
+       <th scope="col">ジャンル</th>
+     </tr>
+   </thead>
+   <tbody>
+     <div class="item-list">
+       <% @items.each do |item| %>
+         <tr>
+           <th scope="row"><%= item.id %></th>
+           <!--link_toでshow(admin_item_path)に遷移させる予定-->
+           <td><%= item.name %></td>
+           <td><%= item.price %></td>
+           <td><%= item.genre.name %></td>
+           <!--<td>%= sales_status </td>--->
+         </tr>
+       <% end %>
+     </div>
+     <%= paginate @items %>
+    </tbody>
+ </table>
+</div>
