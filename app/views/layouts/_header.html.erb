@@ -11,21 +11,21 @@
               <li class="header-name">
                 ようこそ、<%= current_member.last_name %><%= current_member.first_name %>さん！
               </li>
-              <li><%= link_to "マイページ", members_path(current_member), class: "nav-item"%></li>
-              <li><%= link_to "商品一覧", items_path, class: "nav-item"%></li>
-              <li><%= link_to "カート", cart_items_path, class: "nav-item"%></li>
-              <li><%= link_to "ログアウト", destroy_member_session_path, method: :delete, class: "nav-item"%></li>
+              <li><%= link_to "my page", members_path(current_member), class: "nav-link navbar-light"%></li>
+              <li><%= link_to "items", items_path, class: "nav-link navbar-light"%></li>
+              <li><%= link_to "cart", cart_items_path, class: "nav-link navbar-light"%></li>
+              <li><%= link_to "logout", destroy_member_session_path, method: :delete, class: "nav-link navbar-light"%></li>
             <% elsif admin_signed_in? %>
-            　<li><%= link_to "商品一覧", admin_items_path, class: "nav-item"%></li>
-            　<li><%= link_to "会員一覧", admin_members_path, class: "nav-item"%></li>
-            　<li><%= link_to"注文履歴一覧", admin_orders_path, class: "nav-item"%></li>
-            　<li><%= link_to"ジャンル一覧", admin_genres_path, class: "nav-item"%></li>
-            　<li><%= link_to"ログアウト", destroy_admin_session_path, method: :delete, class: "nav-item"%></li>
+            　<li><%= link_to "items", admin_items_path, class: "nav-link navbar-light"%></li>
+            　<li><%= link_to "members", admin_members_path, class: "nav-link navbar-light"%></li>
+            　<li><%= link_to"orders", admin_orders_path, class: "nav-link navbar-light"%></li>
+            　<li><%= link_to"genres", admin_genres_path, class: "nav-link navbar-light"%></li>
+            　<li><%= link_to"logout", destroy_admin_session_path, method: :delete, class: "nav-link navbar-light"%></li>
             <% else %>
 
-              <li><%= link_to "商品一覧", items_path, class: "nav-item"%></li>
-              <li><%= link_to "新規登録", new_member_registration_path, data: {"turbolinks" => false}, class: "nav-item"%></li>
-              <li><%= link_to "ログイン", new_member_session_path, class: "nav-item"%></li>
+              <li><%= link_to "items", items_path, class: "nav-link navbar-light"%></li>
+              <li><%= link_to "sign up", new_member_registration_path, data: {"turbolinks" => false}, class: "nav-link navbar-light"%></li>
+              <li><%= link_to "login", new_member_session_path, class: "nav-link navbar-light"%></li>
             <% end %>
           </ul>
         </div>
