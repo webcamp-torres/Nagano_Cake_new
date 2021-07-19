@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'search/search'
+  get '/search', to: 'search#search'
   post "/admin/items/admin_items_path" => "items#index"
       root to: 'homes#top'
-  
+
   devise_for :members, controllers: {
        sessions:      'members/sessions',
        passwords:     'members/passwords',
@@ -16,7 +16,6 @@ Rails.application.routes.draw do
       resources :cart_items
       resources :orders
       resources :deliveries
-      get 'searches' => 'searches#search'
     end
 
 
@@ -26,7 +25,6 @@ Rails.application.routes.draw do
       resources :genres, only: [:index, :create, :edit, :update]
       resources :members, only: [:index, :show, :edit, :update]
       resources :order_items, only: [:update]
-      get 'searches' => 'searches#search'
    end
 
      devise_for :admins, controllers: {
