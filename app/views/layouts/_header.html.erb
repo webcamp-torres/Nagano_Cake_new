@@ -9,12 +9,12 @@
           <ul class="nav navbar-nav ml-auto">
             <% if member_signed_in? %>
               <li class="header-name">
-                ようこそ、<%= last_namefirst_name(current_member) %>さん！
+                <!--ようこそ、<%# last_namefirst_name(current_member) %>さん！-->
               </li>
               <li><%= link_to "マイページ", members_path(current_member), class: "nav-item"%></li>
               <li><%= link_to "商品一覧", items_path, class: "nav-item"%></li>
-              <li><%= link_to "カート", members_cart_items_path, class: "nav-item"%></li>
-              <li><%= link_to "ログアウト", destroy_members_session_path, method: :delete, class: "nav-item"%></li>
+              <li><%= link_to "カート", cart_items_path, class: "nav-item"%></li>
+              <li><%= link_to "ログアウト", destroy_member_session_path, method: :delete, class: "nav-item"%></li>
             <% elsif admin_signed_in? %>
             　<li><%= link_to "商品一覧", admin_items_path, class: "nav-item"%></li>
             　<li><%= link_to "会員一覧", admin_members_path, class: "nav-item"%></li>
