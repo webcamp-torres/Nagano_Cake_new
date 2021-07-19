@@ -1,16 +1,18 @@
 <div class="container">
    <div class="row mx-auto">
-     <div class="col-3">
+     <div class="side-menu col-md-2" style="min-height: 100px; " >
         <%= render 'admin/genres/index', genres: @genres %>
       </div>
-          <div class="item-list">
-         <% @items.each do |item| %>
-           <tr>
-              <%= attachment_image_tag(item, :image, :fill, 50, 50, fallback: "no-image-icon.jpg") %>
-              <%= item.name %>
-              <%= item.introduction %>
-           </tr>
-         <% end %>
-       </div>
-     </div>
+      <div class="main-content col-md-10">
+       <div class="row mt-3">
+          <% @items.each do |item| %>
+            <div class="col-3 mx-4">
+               <span><%= attachment_image_tag(item, :image, :fill, 200, 200, fallback: "no-image-icon.jpg") %></span><br>
+               <span><%= item.name %></span><br>
+               <span><%= item.introduction %></span>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
 </div>
