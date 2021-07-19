@@ -1,12 +1,24 @@
 <% if @datas.nil? %>
   <h2>該当する商品はありません</h2>
 <% end %>
+　<table class='table'>
+  <thead>
+    <tr>
+      <th>商品ID</th>
+      <th>商品名</th>
+      <th>税抜価格</th>
+      <th>ジャンル</th>
+      <!--ステータス-->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
   <% @datas.each do |data| %>
-    <div>
-      <%= link_to item_path(data.id) do %>
-        <%= attachment_image_tag data, :image, size: "190x150", class: "img_hover" %><br>
-      <% end %>
-      <p><%=  data.name %></p><br>
-      <p>￥<%= data.price %></p>
-    </div>
+    <tr>
+      <td><%= data.id %></td>
+      <td><%= link_to data.name, item_path(data.id) %></td>
+      <td><%=  data.name %></td><br>
+      <td>￥<%= data.price %></td>
+      <!--<td>販売ステータス</td>-->
+    </tr>
   <% end %>
