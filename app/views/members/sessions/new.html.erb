@@ -6,7 +6,7 @@
     <div class="container">
       <div class="row" style="margin-bottom:100px;">
         <div class="mx-auto" style="width: 600px;">
-          <div class="border border-secondary rounded bg-light text-white" style="padding:10px;">
+          <div class="border border-secondary rounded bg-light text-dark" style="padding:10px;">
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
               <div class="field pb-2">
                 <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'メールアドレス' %>

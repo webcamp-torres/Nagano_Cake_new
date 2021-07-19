@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row" style="margin:40px;">
       <div class="mx-auto" style="width: 600px;">
-        <div class="border border-secondary rounded bg-light text-white" style="padding:10px;">
+        <div class="border border-secondary rounded bg-light text-dark" style="padding:10px;">
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= render "members/shared/error_messages", resource: resource %>
 
@@ -48,7 +48,7 @@
               <%= f.label :郵便番号, class: 'text-primary' %>
               <div class="d-flex p-4 border-bottom">
                 <div class="col-8 mx-auto">
-                  <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", class: 'form-control', placeholder: 'sample@example.com' %>
+                  <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", class: 'form-control', placeholder: '000-0000' %>
                 </div>
               </div>
             </div>
@@ -57,7 +57,7 @@
               <%= f.label :住所, class: 'text-primary' %>
               <div class="d-flex p-4 border-bottom">
                 <div class="col-12 mx-auto">
-                  <%= f.text_field :address, autofocus: true, autocomplete: "address", class: 'form-control', placeholder: 'sample@example.com' %>
+                  <%= f.text_field :address, autofocus: true, autocomplete: "address", class: 'form-control', placeholder: '東京都渋谷区代々木神園町0-0' %>
                 </div>
               </div>
             </div>
@@ -66,7 +66,7 @@
               <%= f.label :電話番号, class: 'text-primary' %>
               <div class="d-flex p-4 border-bottom">
                 <div class="col-8 mx-auto">
-                  <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number", class: 'form-control', placeholder: 'sample@example.com' %>
+                  <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number", class: 'form-control', placeholder: '000-0000-0000' %>
                 </div>
               </div>
             </div>
@@ -78,7 +78,7 @@
                   <% if @minimum_password_length %>
                   <em>（<%= @minimum_password_length %> 文字以上）</em>
                   <% end %>
-                  <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder: 'sample@example.com' %>
+                  <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
                 </div>
               </div>
             </div>
@@ -87,7 +87,7 @@
               <%= f.label :（確認用） %>
               <div class="d-flex pb-4 border-bottom">
                 <div class="col-8 mx-auto">
-                  <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: 'sample@example.com' %>
+                  <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
                 </div>
               </div>
             </div>
