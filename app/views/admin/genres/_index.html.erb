@@ -1,0 +1,8 @@
+<table class="table table-bordered genre-table">
+    <th>ジャンル検索</th>
+        <% genres.each do |g| %>
+          <tr>
+            <td scope="col-3"><%=link_to g.name, search_path('search[value]': @genre.id, 'search[how]': "match") %></td>
+          </tr>
+        <% end %>
+</table>
