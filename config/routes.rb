@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get '/search', to: 'search#search'
   post "/admin/items/admin_items_path" => "items#index"
       root to: 'homes#top'
+      get '/about' => 'homes#about'
 
   devise_for :members, controllers: {
        sessions:      'members/sessions',
@@ -10,7 +11,6 @@ Rails.application.routes.draw do
      }
 
     scope module: 'public' do
-      get '/about' => 'homes#about'
       resources :items
       resources :members
       resources :cart_items

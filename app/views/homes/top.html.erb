@@ -1,47 +1,30 @@
 <main>
   <div class="container">
-    <div class="row">
-      <div class="col-md-2 clearfix">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>ジャンル検索</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                ケーキ
-              </td>
-            </tr>
-          </tbody>
-        </table>
+   <div class="row mx-auto">
+     <div class="col-3">
+        <%= render 'admin/genres/index', genres: @genres %>
       </div>
-      <div class="col-md-9">
+      <div class="col-9">
         <img class="card-img" src="/assets/image_cake_top.jpeg" alt="">
-        <p>ようこそ、ながのCAKEへ！</p>
-        <p>このサイトは、ケーキ販売のECサイトになります。</p>
-        <p>会員でない方も商品の閲覧はできますが、</p>
-        <p>購入には会員登録が必要になります。</p>
-      </div>
-      <p class="text-left">新着商品</p>
-      <div class="clearfix">
-        <ul>
-          <%= image_tag "/assets/image_cake_remon.jpeg", :size =>'200x150' %>
-          <%= image_tag "/assets/image_cake2.jpeg", :size =>'200x150' %>
-          <%= image_tag "/assets/image_cake3.jpeg", :size =>'200x150' %>
-          <%= image_tag "/assets/image_cake_remon.jpeg", :size =>'200x150' %>
-            <li>
-              <p>商品名</p>
-              <p>¥</p>
-              <p>商品名</p>
-              <p>¥</p>
-              <p>商品名</p>
-              <p>¥</p>
-              <p>商品名</p>
-              <p>¥</p>
+        <div class="card-img-overlay">
+          <p>
+            ようこそ、ながのCAKEへ！<br>
+            このサイトは、ケーキ販売のECサイトになります。<br>
+            会員でない方も商品の閲覧はできますが、<br>
+            購入には会員登録が必要になります。<br>
+        </div>
+
+        <h3>新着商品</h3>
+        <ul class="d-flex justify-content-left list-unstyled">
+          <% @items.each do |item| %>
+            <li class="col-2 mx-3">
+              <%= link_to (attachment_image_tag item, :image, size: "150x150", fallback: "no_image.jpg"), item_path(item.id)%>
+              <p class="mt-2"><%= item.name %></p>
+              <p class="mt-2">¥ <%= item.price.to_s(:delimited) %></p>
             </li>
+          <% end %>
         </ul>
+        <p class="col-3 offset-10"><%= link_to "全ての商品を見る >", items_path %></p>
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
 <div class="my-4 offset-1"><span class="page_title">商品新規登録</span></div>
 <div class="new-product-form col-8 offset-2">
-  <%= form_with model: @item, url: admin_items_path, local: true do |f| %>
+  <%= form_with model: @item, url: admin_items_path(@item), local: true do |f| %>
     <dl>
       <dt><%= f.label :image, "商品画像", class: 'mr-5' %></dt>
       <dd><%= f.attachment_field :image %></dd>
