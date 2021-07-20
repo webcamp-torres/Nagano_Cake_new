@@ -1,4 +1,6 @@
 class Admin::ItemsController < ApplicationController
+   before_action :authenticate_member!
+
    def index
       @items = Item.all
       @items = Item.page(params[:page]).per(10)
@@ -16,6 +18,8 @@ class Admin::ItemsController < ApplicationController
       redirect_to admin_item_path
    end
 
+  
+
    def show
       @item = Item.find(params[:id])
       @genre = Genre.all
@@ -30,7 +34,7 @@ class Admin::ItemsController < ApplicationController
    private
 
    def item_params
-      params.require(:item).permit(:genre_id, :name, :image, :introduction, :price, :sales_status)
+      params.require(:item).permit(:genre_id, :name, :image, :introduction, :price, :sales_status, :item_id)
 
    end
 
