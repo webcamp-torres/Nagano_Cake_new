@@ -1,4 +1,6 @@
 class Admin::ItemsController < ApplicationController
+   before_action :authenticate_member!
+
    def index
       @items = Item.all
       @items = Item.page(params[:page]).per(10)
@@ -13,7 +15,7 @@ class Admin::ItemsController < ApplicationController
    def create
       @item = Item.new(item_params)
       @item.save
-      redirect_to admin_item_path
+      redirect_to admin_items_path
    end
 
    def show
@@ -22,16 +24,20 @@ class Admin::ItemsController < ApplicationController
    end
 
    def update
+      @item = Item.find(params[:id])
+      @item.update(item_params)
+      redirect_to admin_item_path
    end
 
    def edit
+      @item = Item.find(params[:id])
+      @genre_edit = Genre.all
    end
 
    private
 
    def item_params
-      params.require(:item).permit(:genre_id, :name, :image, :introduction, :price, :sales_status)
-
+      params.require(:item).permit(:genre_id, :name, :image, :introduction, :price, :sales_status, :item_id)
    end
 
 end

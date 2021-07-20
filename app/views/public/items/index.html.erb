@@ -7,9 +7,11 @@
        <div class="row mt-3">
           <% @items.each do |item| %>
             <div class="col-3 mx-4">
-               <span><%= attachment_image_tag(item, :image, :fill, 200, 200, fallback: "no-image-icon.jpg") %></span><br>
-               <span><%= item.name %></span><br>
-               <span><%= item.introduction %></span>
+               <%= link_to item_path(item.id) do %>
+                 <span><%= attachment_image_tag(item, :image, :fill, 200, 200, fallback: "no_imag.jpg") %></span><br>
+               <% end %>
+                <span><%= item.name %></span><br>
+                <span><%= item.introduction %></span>
             </div>
           <% end %>
         </div>

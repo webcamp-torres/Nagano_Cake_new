@@ -14,6 +14,8 @@ Rails.application.routes.draw do
       resources :items
       resources :members
       resources :cart_items
+      # post '/update_item' => 'cart_items#update_item'
+      delete '/delete_all' => 'cart_items#delete_all'
       resources :orders
       resources :deliveries
     end

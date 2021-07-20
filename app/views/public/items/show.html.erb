@@ -21,11 +21,10 @@
               </tr>
                 <tr>
                   <td>
-                    <%= f.select :quantity, [["1", 1], ["2", 2], ["3", 3], ["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10]], include_blank: "個数を選択" %>
+                    <%= f.select :amount, [["1", 1], ["2", 2], ["3", 3], ["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10]], include_blank: "個数を選択" %>
                   </td>
                   <td >
-                    <%= f.hidden_field :item_id, :value => @item.id %>
-                    <%= f.submit 'カートに入れる',class: "btn btn-sccessfuly" %>
+                    <i class="cart-arrow-down"><%= f.submit 'カートに入れる', cart_item_path(item_id :item.id), class: "btn btn-primary" %></i>
                   </td>
                 </tr>
               </thead>
