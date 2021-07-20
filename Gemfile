@@ -70,4 +70,3 @@ gem 'pry-byebug'
 gem 'kaminari'
 
 gem 'bulma-rails'
-gem 'cancancan'
