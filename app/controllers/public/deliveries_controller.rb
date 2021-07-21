@@ -35,8 +35,11 @@ class Public::DeliveriesController < ApplicationController
 
   def destroy
     delivery = Delivery.find(params[:id])
-    delivery.destroy
-    redirect_to deliveries_path
+    if delivery.destroy
+      redirect_to deliveries_path, notice: "配送先が削除されました"
+    else
+      render :index
+    end
   end
 
   private
