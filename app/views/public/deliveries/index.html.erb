@@ -6,17 +6,17 @@
     <%= f.label :郵便番号（ハイフンなし） %>
     <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", placeholder: '0000000' %>
   </div>
-    
+
   <div class="field">
     <%= f.label :住所 %>
     <%= f.text_field :address, autofocus: true, autocomplete: "postal_code", placeholder: '東京都渋谷区代々木神園町0-0' %>
   </div>
-    
+
   <div class="field">
     <%= f.label :宛名 %>
     <%= f.text_field :name, autofocus: true, autocomplete: "postal_code", placeholder: '令和道子' %>
   </div>
-    
+
   <div class="actions">
     <%= f.submit "新規登録", class: 'btn btn-outline-success btn-lg' %>
   </div>
@@ -40,9 +40,10 @@
         <td><%= delivery.name %></td>
         <td>
           <%= link_to "削除する", delivery_path(delivery), class: "btn btn-sm btn-danger", method: :delete %>
+          <%= link_to "編集する", edit_delivery_path(delivery), class: 'btn btn-sm btn-success' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-          
+
