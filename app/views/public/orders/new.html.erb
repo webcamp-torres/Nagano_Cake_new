@@ -1,8 +1,7 @@
 <div class="offset-1 my-2"><span class="page_title">注文情報入力</span></div>
 <div class="container">
-<%= form_with(model: @order, url: confirm_orders_path, local: true) do |f| %>
-  <%= f.hidden_field :member_id, value: current_member.id %>
-  <%= f.hidden_field :shipping_fee, value: "800" %>
+<%= form_with(model: @order, url: orders_confirm_path, local: true) do |f| %>
+
   <div class="form-group">
     <strong><%= f.label :payment_method, "支払い方法", class: "row" %></strong>
     <%= f.radio_button :payment_method, :クレジットカード, default: true %>
@@ -12,16 +11,17 @@
   </div>
   <div class="form-group">
     <strong><%= f.label :address, "お届け先", class: "row" %></strong>
-    <%= radio_button_tag "address", "customer_address", checked: true %>
+    <%= radio_button_tag "address", "member_address", checked: true %>
     <%= f.label "ご自身の住所" %>
     <div class="col">
-      〒<%= current_customer.postcode %>  <%= current_customer.address %><br>
-      <%= current_customer.fullname %>
+      〒<%= current_member.postal_code %>  <%= current_member.address %><br>
+      <%= current_member.first_name + current_member.last_name %>
     </div>
-    <%= radio_button_tag "address", "existing_shipping_address" %>
+    <!--↓の""内はvalue値記述-->
+    <%= radio_button_tag "address", "" %>
     <%= f.label "登録済み住所から選択" %>
     <div class="col">
-      <p><%= f.collection_select :id, current_customer.shipping_addresses, :id, :params_registred_address, {class: "form-control"} %></p>
+      <p><%= f.collection_select :delivery_id, current_member.deliveries, :id, :address, {class: "form-control"} %></p>
     </div>
     <%= radio_button_tag "address", "add_shipping_address" %>
     <%= f.label "新しいお届け先" %>
@@ -33,14 +33,14 @@
       </div>
       <div class="form-group row">
         <%= a.label :address, "住所", class: "col-3" %>
-        <%= a.text_field :address, placeholder: "東京都渋谷区代々木新園町0-0", class: "form-control col-8", id: "customer_address" %>
+        <%= a.text_field :address, placeholder: "東京都千代田区有楽町200-8", class: "form-control col-8", id: "customer_address" %>
       </div>
       <div class="form-group row">
         <%= a.label :address_name, "宛名", class: "col-3" %>
-        <%= a.text_field :address_name, placeholder: "令和道子", class: "form-control col-4" %>
+        <%= a.text_field :address_name, placeholder: "名前", class: "form-control col-4" %>
       </div>
       <% end %>
-      </div>
+    </div>
     <%= f.submit "確認画面へ進む", class: "btn btn-primary offset-4 col-2" %>
   </div>
 <% end %>
