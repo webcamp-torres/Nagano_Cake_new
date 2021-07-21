@@ -15,16 +15,19 @@ class Public::CartItemsController < ApplicationController
     @cart_item = CartItem.new(cart_item_params)
     @cart_item.member_id = current_member.id
     @cart_item.save
-    redirect_to cart_items_path(@cart_item.id)
+    redirect_to cart_items_path
   end
 
   def destroy
-    cart_item = CartItem.find(params[:id])
-    cart_item.destroy
+    @cart_item = CartItem.find(params[:id])
+    @cart_item.destroy
     redirect_back(fallback_location: cart_items_path)
   end
 
-  def all_destroy
+  def delete_all
+    @cart_items = current_member.cart_items
+    @cart_items.delete_all
+    redirect_back(fallback_location: cart_items_path)
   end
 
   private
