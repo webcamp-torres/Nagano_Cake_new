@@ -11,6 +11,8 @@ Rails.application.routes.draw do
      }
 
     scope module: 'public' do
+      post '/orders/confirm' => 'orders#confirm'
+      get '/orders/complete' => 'orders#complete'
       resources :items
       resources :members
       resources :cart_items
