@@ -4,26 +4,26 @@
 
   <div class="form-group">
     <strong><%= f.label :payment_method, "支払い方法", class: "row" %></strong>
-    <%= f.radio_button :payment_method, :クレジットカード, default: true %>
+    <%= f.radio_button :payment_method, :クレジットカード, checked: true %>
     <%= f.label :クレジットカード %> <br>
     <%= f.radio_button :payment_method, :銀行振込 %>
     <%= f.label :銀行振込 %>
   </div>
+
   <div class="form-group">
     <strong><%= f.label :address, "お届け先", class: "row" %></strong>
-    <%= radio_button_tag "address", "member_address", checked: true %>
+    <%= radio_button_tag :address_option, 0, checked: true %>
     <%= f.label "ご自身の住所" %>
     <div class="col">
       〒<%= current_member.postal_code %>  <%= current_member.address %><br>
       <%= current_member.first_name + current_member.last_name %>
     </div>
-    <!--↓の""内はvalue値記述-->
-    <%= radio_button_tag "address", "" %>
+    <%= radio_button_tag :address_option, 1 %>
     <%= f.label "登録済み住所から選択" %>
     <div class="col">
       <p><%= f.collection_select :delivery_id, current_member.deliveries, :id, :address, {class: "form-control"} %></p>
     </div>
-    <%= radio_button_tag "address", "add_shipping_address" %>
+    <%= radio_button_tag :address_option, 2 %>
     <%= f.label "新しいお届け先" %>
     <div class="col">
       <%= fields_for :shipping_address do |a| %>
@@ -41,7 +41,9 @@
       </div>
       <% end %>
     </div>
+
     <%= f.submit "確認画面へ進む", class: "btn btn-primary offset-4 col-2" %>
+
   </div>
 <% end %>
 </div>
