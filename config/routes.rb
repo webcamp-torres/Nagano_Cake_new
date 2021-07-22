@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
     scope module: 'public' do
       post '/orders/confirm' => 'orders#confirm'
+      get '/orders/complete' => 'orders#complete'
       resources :items
       get 'members/my_page' => 'members#my_page'
       resources :members,only: [:show,:edit,:update]  do
@@ -26,6 +27,8 @@ Rails.application.routes.draw do
       end    
       
       resources :cart_items
+      # post '/update_item' => 'cart_items#update_item'
+      delete '/delete_all' => 'cart_items#delete_all'
       resources :orders
       resources :deliveries
       
