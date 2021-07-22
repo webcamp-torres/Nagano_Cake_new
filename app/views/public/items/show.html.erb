@@ -11,7 +11,7 @@
           <table>
             <thead>
               <tr>
-                <th><%= @item.name %></th>
+                <th><%= @item.name %></th><br>
               </tr>
               <tr>
                 <td><%= @item.introduction %></td>
@@ -23,9 +23,9 @@
                   <td>
                     <%= f.select :amount, [["1", 1], ["2", 2], ["3", 3], ["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10]], include_blank: "個数を選択" %>
                   </td>
-                  <td >
+                  <td>
                     <%=f.hidden_field :item_id, value: @item.id %> <!--隠れたfield情報が見えないvalue値としては@item.idをいれる-->
-                    <i class="cart-arrow-down"><%= f.submit 'カートに入れる', class: "btn btn-primary" %></i>
+                    <%= f.submit 'カートに入れる', class: "btn btn-primary" %>
                   </td>
                 </tr>
               </thead>
