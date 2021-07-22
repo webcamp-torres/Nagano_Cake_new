@@ -11,7 +11,7 @@
               <li class="header-name">
                 ようこそ、<%= current_member.last_name %><%= current_member.first_name %>さん！
               </li>
-              <li><%= link_to "my page", members_path(current_member), class: "nav-link navbar-light"%></li>
+              <li><%= link_to "my page", members_my_page_path(current_member), class: "nav-link navbar-light"%></li>
               <li><%= link_to "items", items_path, class: "nav-link navbar-light"%></li>
               <li><%= link_to "cart", cart_items_path, class: "nav-link navbar-light"%></li>
               <li><%= link_to "logout", destroy_member_session_path, method: :delete, class: "nav-link navbar-light"%></li>

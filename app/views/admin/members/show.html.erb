@@ -1,0 +1,19 @@
+<% provide(:title, "会員一覧") %>
+  <h2 class="head-line title_h2 text-center">
+    <%= member.last_name %><%= member.first_name %>さんの会員詳細
+  </h2>
+  <div class="row">
+  <div class="col-xs-8">
+    <div class="field">
+        <p>
+          顧客ID<%= @member.id %>
+          <% if @member.unsubscribe_status == true %>
+            <span>　<i class="fas fa-bullseye blue"></i>退会済
+          <% elsif @member.unsubscribe_status == false %>
+            　<i class="fas fa-bullseye red"></i>有効会員</span>
+          <% end %>
+        </p>
+    
+    </div>
+  </div>
+  </div>
