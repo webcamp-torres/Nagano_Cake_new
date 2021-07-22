@@ -2,6 +2,7 @@ class Public::OrdersController < ApplicationController
   before_action :authenticate_member!
 
   def index
+    @orders = current_member.orders
   end
 
   def show
@@ -13,8 +14,24 @@ class Public::OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
+    @order.shipping_fee = 800
+    @order.member_id = current_member.id
     @order.save
-    redirect_to orders_path
+    redirect_to orders_complete_path
+
+    @cart_items = current_member.cart_items
+    @cart_items.each do |cart_item| 
+      if OrderItem.create(
+        item_id: cart_item.item.id,
+        order_id: @order.id,
+        amount: cart_item.amount,
+        price: (cart_item.item.price * 1.1).floor.to_s(:delimited),
+        )
+      else
+        flash[:danger] = "注文内容に不備があります。"
+        redirect_to new_member_path
+      end
+    end
   end
 
   def confirm #"確認画面へ進む"ボタンを押したときに呼ばれる
@@ -22,12 +39,12 @@ class Public::OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.shipping_fee = 800
     @order.payment_method = params[:order][:payment_method]
-    @address_option = params[:order][:address_option]
+    @address_option = params[:address_option]
 
     if @address_option == "0" #選択したお届け先によってカラムに代入するものを変える
       @order.postal_code = current_member.postal_code
       @order.address = current_member.address
-      @order.address_name = current_member.last_name + current_member.first_name
+      @order.name = current_member.last_name + current_member.first_name
     elsif @address_option == "1"
       @delivery = Address.find(params[:order][:address])
       @order.postal_code = @delivery.postal_code
@@ -41,10 +58,6 @@ class Public::OrdersController < ApplicationController
   end
 
   def complete
-    @order = Order.new(order_params)
-    @order.member_id = current_member.id
-    @order.save
-    @cart_items = current_member.cart_items
   end
 
   private
