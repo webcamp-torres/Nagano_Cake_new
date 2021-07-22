@@ -1,11 +1,15 @@
-<div class="row justify-content-end" >
-    <%= form_with url: search_path, method: :get, local: true do |f| %>
-     <table　float="right">
+<div class="d-flex flex-row justify-content-center" >
+     <% if member_signed_in? %>
+      <%= form_with url: search_path, method: :get, local: true do |f| %>
+      <table>
         <tr>
-          <td><%= f.text_field 'search[value]', size: "20x2" %></td>
-          <!--<td>%= f.select 'search[how]', options_for_select({ "部分一致" => "partical", "前方一致" => "forward", "後方一致" => "backward", "完全一致" => "match" }) %></td>-->
-          <td><%= f.submit :"Search" %></td>
-       </tr>
-     </table>
-    <% end %>
+          <td><%= f.text_field 'search[value]', size: "26x4", placeholder: "商品名検索", class: "form-control" %></td>
+          <td>
+            <%= f.select 'search[how]', options_for_select({ "部分一致" => "partical", "前方一致" => "forward", "後方一致" => "backward", "完全一致" => "match" }) %>
+          </td>
+          <td><%= f.submit :"検索", class: 'btn btn-secondary' %></td>
+        </tr>
+      </table>
+          <% end %>
+        <% end %>
 </div>

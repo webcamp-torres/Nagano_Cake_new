@@ -1,24 +1,28 @@
-<% if @datas.nil? %>
-  <h2>該当する商品はありません</h2>
-<% end %>
-　<table class='table'>
-  <thead>
-    <tr>
-      <th>商品ID</th>
-      <th>商品名</th>
-      <th>税抜価格</th>
-      <th>ジャンル</th>
-      <!--ステータス-->
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @datas.each do |data| %>
-    <tr>
-      <td><%= data.id %></td>
-      <td><%= link_to data.name, item_path(data.id) %></td>
-      <td><%=  data.name %></td><br>
-      <td>￥<%= data.price %></td>
-      <!--<td>販売ステータス</td>-->
-    </tr>
-  <% end %>
+   <div class="row">
+     <% if @datas.empty? %>
+       <h2>該当する商品はありません</h2>
+     <% end %>
+    <table class='item-search-table'>
+       <thead>
+         <tr>
+            <th>商品ID</th>
+            <th>画像</th>
+            <th>商品名</th>
+            <th>ジャンル</th>
+           <th>税抜価格</th>
+           <!--ステータス-->
+         </tr>
+       </thead>
+       <tbody>
+         <% @datas.each do |data| %>
+           <tr>
+             <td><%= data.id %></td>
+             <td><%= attachment_image_tag(data, :image, :fill, 250, 180,  fallback: "no_image.jpeg", size:'250x180') %><br></td>
+             <td><%= link_to data.name, item_path(data.id) %></td>
+             <td><%=  data.name %></td><br>
+             <td>￥<%= data.price %></td>
+             <!--<td>販売ステータス</td>-->
+           </tr>
+         <% end %>
+      </tbody>
+   </div>
