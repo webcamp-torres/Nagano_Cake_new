@@ -6,6 +6,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def show
+    @order = Order.find(params[:id])
   end
 
   def new
@@ -20,7 +21,7 @@ class Public::OrdersController < ApplicationController
     redirect_to orders_complete_path
 
     @cart_items = current_member.cart_items
-    @cart_items.each do |cart_item| 
+    @cart_items.each do |cart_item|
       if OrderItem.create(
         item_id: cart_item.item.id,
         order_id: @order.id,
@@ -62,7 +63,7 @@ class Public::OrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:order).permit(:member_id, :postal_code, :address, :name, :shipping_fee, :total_payment, :payment_method, :order_status)
+    params.require(:order).permit(:member_id, :postal_code, :address, :name, :shipping_fee, :total_payment, :payment_method, :order_status, :created_at, :updated_at)
   end
 
 end
