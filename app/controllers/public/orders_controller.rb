@@ -20,7 +20,7 @@ class Public::OrdersController < ApplicationController
     redirect_to orders_complete_path
 
     @cart_items = current_member.cart_items
-    @cart_items.each do |cart_item| 
+    @cart_items.each do |cart_item|
       if OrderItem.create(
         item_id: cart_item.item.id,
         order_id: @order.id,
