@@ -1,5 +1,5 @@
 class Public::ItemsController < ApplicationController
-  before_action :authenticate_member!,except: [:index, :sh]
+  before_action :authenticate_member!,except: [:index, :show] 
   def index
     @items = Item.all
     @genres = Genre.all
