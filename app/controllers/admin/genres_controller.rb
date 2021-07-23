@@ -9,7 +9,7 @@ class Admin::GenresController < ApplicationController
   def create
     @genre = Genre.new(genre_params)
     @genre.save(genre_params)
-    redirect_to admin_genre_index_path
+    redirect_to admin_genres_path
   end
 
   def edit
