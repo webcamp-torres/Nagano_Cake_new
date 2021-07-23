@@ -1,6 +1,7 @@
 class Public::OrdersController < ApplicationController
   before_action :authenticate_member!
 
+
   def index
     @orders = current_member.orders
   end
