@@ -12,6 +12,7 @@
        <th scope="col">商品名</th>
        <th scope="col">税抜価格</th>
        <th scope="col">ジャンル</th>
+       <th scope="col">販売ステータス</th>
      </tr>
    </thead>
    <tbody>
@@ -23,7 +24,7 @@
            <td><%= link_to item.name, admin_item_path(item) %></td>
            <td><%= item.price %></td>
            <td><%= item.genre.name %></td>
-           <!--<td>%= sales_status </td>--->
+           <td><%= item.sales_status ? "販売中" : "販売停止" %></td>
          </tr>
        <% end %>
      </div>
