@@ -1,21 +1,27 @@
-<div class="container">
-   <div class="row mx-auto">
-        <% render 'layouts/search' %>
-    <div class="roy d-flex justify-content-center">
+<div class="title text-center">
+  <h3>All items</h3>
+  <p>( 全<%= @items.count %>件 )</p>
+</div>
+<!---------ジャンル一覧ボタン------->
+<div class="genre-content">
+   <span class="genre">
       <% @genres.each do |genre| %>
         <%= link_to genre.name, search_path('search[value]': genre.id, 'search[how]': "match"), class: "btn btn-outline-secondary" %>
       <% end %>
-    </div>
-  </div>
-      <div class="main-content col-md-10">
+  </span>
+</div>
+  <div class="container mt-3">
+      <div class="main-content">
        <div class="row">
           <% @items.each do |item| %>
             <div class="col">
-               <%= link_to item_path(item.id) do %>
-                 <span><%= attachment_image_tag(item, :image, :fill, 200, 200, fallback: "no_imag.jpg") %></span><br>
-               <% end %>
-                <span><%= item.name %></span><br>
-                <span><%= item.price %></span>
+                 <%= link_to item_path(item.id) do %>
+              <span class="img_container">
+                 <%= attachment_image_tag(item, :image, :fill, 200, 200, fallback: "no_imag.jpg") %><br>
+              </span>
+                 <% end %>
+                <div class="font-weight-bold"><%= item.name %></div><br>
+                <div class="font-weight-light mb-5">¥<%= item.price %></div>
             </div>
           <% end %>
         </div>

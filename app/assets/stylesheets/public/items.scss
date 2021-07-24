@@ -10,3 +10,42 @@
  background-size: cover;
  opacity: 0.8;
 }
+
+.genre-content {
+ text-align: center;
+}
+
+.img_container{
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  position: relative;
+}
+
+.img_container::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  z-index: 2;
+  transition: background-color 0.5s;
+}
+
+img{
+  cursor: pointer;
+}
+
+
+.img_container:hover::before {
+ background-color: rgba(0, 0, 0, 0.3);
+}
+
+.main-visual {
+  text-align: center;
+  margin-left: 20%;
+}
+
+.cart_item {
+  margin-left: 30%;
+}

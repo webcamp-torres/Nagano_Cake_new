@@ -1,5 +1,4 @@
 class Public::MembersController < ApplicationController
-  before_action :authenticate_member!
   
   def my_page
     @member = current_member 
