@@ -20,7 +20,6 @@
                 <%= attachment_image_tag cart_item.item, :image, size: "50x50" %>
                 <%= cart_item.item.name %>
               </td>
-              <!--to_s(:delimited)入れて3桁区切りしたい-->
               <td>¥ <%= (cart_item.item.price * 1.1).floor.to_s(:delimited) %></td>
               <td><%= cart_item.amount %></td>
               <td>¥ <%= ((cart_item.item.price * 1.1).floor * cart_item.amount).to_s(:delimited) %></td>
