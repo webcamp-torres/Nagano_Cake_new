@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get '/about' => 'homes#about'
   get 'member/edit' => 'members#edit'
-  get '/admins' => 'admin/homes#top'
   patch 'members' => 'members#update'
 
   devise_for :members, controllers: {
@@ -45,9 +44,6 @@ Rails.application.routes.draw do
       resources :genres, only: [:index, :create, :edit, :update]
       resources :members, only: [:index, :show, :edit, :update ]
       get 'admin/members' => 'members#index'
-      get 'admin/edit' => 'members#edit'
-      patch 'admins' => 'members#update'
-
       resources :order_items, only: [:update]
    end
 
