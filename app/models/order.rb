@@ -11,4 +11,5 @@ class Order < ApplicationRecord
      発送待ち: 3,
      発送済み: 4
    }
+
 end
