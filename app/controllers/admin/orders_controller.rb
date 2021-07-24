@@ -11,10 +11,12 @@ class Admin::OrdersController < ApplicationController
     order = Order.find(params[:id])
 		order_items = order.order_items
 		order.update(order_status: params[:order][:order_status].to_i)
-		if order.order_status == "入金確認"
-			order_items.update_all(making_status: "製作待ち")
+		case order.order_status
+		when "入金確認"
+			 order_items.update_all(making_status: "製作待ち")
+		when order.order_status == "発送済み"
+		  order_items.update_all(making_status: "製作完了")
 		end
-
 		redirect_to admin_order_path(order.id)
   end
 
