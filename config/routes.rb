@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get '/about' => 'homes#about'
   get 'member/edit' => 'members#edit'
+  get '/admins' => 'admin/homes#top'
   patch 'members' => 'members#update'
 
   devise_for :members, controllers: {

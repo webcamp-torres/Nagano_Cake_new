@@ -51,11 +51,11 @@ class Public::OrdersController < ApplicationController
       @delivery = Address.find(params[:order][:address])
       @order.postal_code = @delivery.postal_code
       @order.address = @delivery.address
-      @order.address_name = @delivery.address_name
+      @order.name = @delivery.name
     elsif @address_option == "2"
       @order.postal_code = params[:order][:postal_code]
       @order.address = params[:order][:address]
-      @order.address_name = params[:order][:name]
+      @order.name = params[:order][:name]
     end
   end
 
