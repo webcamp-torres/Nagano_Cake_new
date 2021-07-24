@@ -1,15 +1,16 @@
 <% provide(:title, "マイページ") %>
 <div class="container">
   <div class="row">
+  	
 	<div class="col-md-12">
-		<h2 class="head-line title_h2">マイページ</h2>
-		  <h3><strong class="information-link">登録情報</strong>
-		  <%= link_to " 編集する", edit_member_path(current_member), class: "glyphicon glyphicon-pencil btn btn-success" %>
+		<h2 class="head_my_page title_h2 text-center">マイページ</h2>
+		  <h3><strong class="subhead_my_page information-link">登録情報</strong>
+		  <%= link_to " 編集する", edit_member_path(current_member), class: "btn-partial-line" %>
 		  </h3>
 			
 		  
 		<div class="row">
-		<table class="table table-bordered table-condensed col-md-6" >
+		<table class="table table-bordered table-condensed col-md-6　col-offset-md-3" >
 		
 		  <tbody>
 		  	<tr>
@@ -41,11 +42,11 @@
 		
 		</div>
       <div class="mypage-bottoms">
-				<P><strong class="shipping-link">配送先</strong>
-				<%= link_to " 一覧を見る", deliveries_path, data: {"turbolinks" => false}, class: "glyphicon glyphicon-folder-open btn btn-info" %>
+				<P><strong class="shipping-link">配送先　</strong>
+				<%= link_to " 一覧を見る", deliveries_path, data: {"turbolinks" => false}, class: "btn-partial-line" %>
 				</p>
 				<p><strong class="order-link">注文履歴</strong>
-				<%= link_to " 一覧を見る", orders_path, class: "glyphicon glyphicon-folder-open btn btn-info" %>
+				<%= link_to " 一覧を見る", orders_path, class: "btn-partial-line" %>
 				</p>
 	  </div>
 			
