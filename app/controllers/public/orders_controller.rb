@@ -19,6 +19,7 @@ class Public::OrdersController < ApplicationController
     @order.shipping_fee = 800
     @order.member_id = current_member.id
     @order.save
+    Delivery.find_or_create_by(member_id: current_member.id,name: @order.name,address: @order.address,postal_code: @order.postal_code)
     redirect_to orders_complete_path
 
     @cart_items = current_member.cart_items
@@ -48,14 +49,14 @@ class Public::OrdersController < ApplicationController
       @order.address = current_member.address
       @order.name = current_member.last_name + current_member.first_name
     elsif @address_option == "1"
-      @delivery = Address.find(params[:order][:address])
+      @delivery = Delivery.find(params[:order][:delivery_id])
       @order.postal_code = @delivery.postal_code
       @order.address = @delivery.address
       @order.name = @delivery.name
     elsif @address_option == "2"
-      @order.postal_code = params[:order][:postal_code]
-      @order.address = params[:order][:address]
-      @order.name = params[:order][:name]
+      @order.postal_code = params[:address][:postcode]
+      @order.address = params[:address][:address]
+      @order.name = params[:address][:name]
     end
   end
 
