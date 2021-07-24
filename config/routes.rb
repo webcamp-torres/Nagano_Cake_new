@@ -45,6 +45,9 @@ Rails.application.routes.draw do
       resources :genres, only: [:index, :create, :edit, :update]
       resources :members, only: [:index, :show, :edit, :update ]
       get 'admin/members' => 'members#index'
+      get 'admin/edit' => 'members#edit'
+      patch 'admins' => 'members#update'
+
       resources :order_items, only: [:update]
    end
 
