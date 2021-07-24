@@ -10,7 +10,7 @@ Rails.application.routes.draw do
        sessions:      'members/sessions',
        passwords:     'members/passwords',
        registrations: 'members/registrations'
-
+       
      }
 
     scope module: 'public' do
@@ -20,21 +20,21 @@ Rails.application.routes.draw do
       get 'members/my_page' => 'members#my_page'
       resources :members,only: [:show,:edit,:update]  do
         collection do
-
+          
           get 'unsubscribe'
           patch 'unsubscribe_status' => 'members#unsubscribe_status'
         end
-      end
-
+      end    
+      
       resources :cart_items
       # post '/update_item' => 'cart_items#update_item'
       delete '/delete_all' => 'cart_items#delete_all'
       resources :orders
       resources :deliveries
-
-
+      
+      
     end
-
+    
 
 
 
@@ -44,6 +44,9 @@ Rails.application.routes.draw do
       resources :genres, only: [:index, :create, :edit, :update]
       resources :members, only: [:index, :show, :edit, :update ]
       get 'admin/members' => 'members#index'
+      get 'admin/edit' => 'members#edit'
+      patch 'admins' => 'members#update'
+      
       resources :order_items, only: [:update]
    end
 
