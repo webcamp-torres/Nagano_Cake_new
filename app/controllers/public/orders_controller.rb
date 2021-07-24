@@ -19,6 +19,7 @@ class Public::OrdersController < ApplicationController
     @order.shipping_fee = 800
     @order.member_id = current_member.id
     @order.save
+    Delivery.find_or_create_by(member_id: current_member.id,name: @order.name,address: @order.address,postal_code: @order.postal_code)
     redirect_to orders_complete_path
 
     @cart_items = current_member.cart_items
