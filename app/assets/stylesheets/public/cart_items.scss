@@ -1,3 +1,11 @@
 // Place all the styles related to the public/cart_items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.header-cart-item {
+ height: 25vh;
+ background-image: image-url('cupcakes.jpeg');
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+ opacity: 0.8;
+}
