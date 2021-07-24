@@ -47,7 +47,7 @@
     
     <div class="actions text-center">
       <%= link_to "編集する",edit_admin_member_path(@member), class: "glyphicon glyphicon-pencil btn btn-success edit_shipping_addres_#{@member.id}" %>
-      
+      <%= link_to " 注文履歴一覧を見る", admin_order_path(@member), class: "glyphicon glyphicon-folder-open btn btn-info" %>
     </div>
     
     
