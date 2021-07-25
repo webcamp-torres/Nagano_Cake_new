@@ -7,33 +7,17 @@
      </div>
 
      <div class = "row ml-5 pt-5 text-right">
-       <div class = "col-md-3 mx-auto">
-         <%= attachment_image_tag @item, :image, size: "250x250", fallback: "no_image.jpg" %>
+       <div class = "col-md-6">
+         <%= attachment_image_tag @item, :image, size: "350x350", fallback: "no_image.jpg" %>
        </div>
-       <div class = "col-md-8 mx-auto">
+       <div class = "col-md-3 mb-5">
          <%= form_with model: @cart_item, url: cart_items_path, local:true do |f| %>
-           <table>
-             <thead>
-               <tr>
-                 <th><%= @item.name %></th><br>
-               </tr>
-               <tr>
-                 <td><%= @item.introduction %></td>
-               </tr>
-               <tr>
-                 <td>¥<%= (@item.price*1.10).floor %>（税込）</td>
-               </tr>
-                <tr>
-                 <td>
-                    <%= f.select :amount, [["1", 1], ["2", 2], ["3", 3], ["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10]], include_blank: "個数を選択" %>
-                  </td>
-                  <td>
-                    <%=f.hidden_field :item_id, value: @item.id %> <!--隠れたfield情報が見えないvalue値としては@item.idをいれる-->
-                    <%= f.submit 'カートに入れる', class: "btn btn-primary" %>
-                  </td>
-                </tr>
-              </thead>
-            </table>
+             <p><%= @item.name %></p><br>
+             <p><%= @item.introduction %></p><br>
+             <p>¥<%= (@item.price*1.10).floor %>（税込）</p><br>
+             <p><%= f.select :amount, [["1", 1], ["2", 2], ["3", 3], ["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10]], include_blank: "個数を選択" %></p><br>
+             <p><%=f.hidden_field :item_id, value: @item.id %></p> <!--隠れたfield情報が見えないvalue値としては@item.idをいれる-->
+             <p><%= f.submit 'カートに入れる', class: "btn btn-primary" %></p>
           <% end %>
         </div>
       </div>
