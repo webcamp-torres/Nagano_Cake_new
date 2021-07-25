@@ -1,10 +1,10 @@
 <div class="container">
   <h4 class="d-inline p-3 mb-2 bg-light text-dark">注文履歴詳細</h4>
-  <div class="row mb-1">
+  <div class="row mb-1 mx-auto">
     <table class="order-detail mt-3 mb-3 ml-5">
         <tr>
           <th>購入者</th>
-          <td class="order-box"><%=link_to  @order.member.last_name+@order.member.first_name, admin_member_path%></td>
+          <td class="order-box"><%=link_to  @order.member.last_name+@order.member.first_name, admin_member_path(@order.member) %></td>
         </tr>
         <tr>
           <th>注文日</th>
@@ -19,9 +19,9 @@
           <td class="order-box"><%= @order.payment_method %></td>
         </tr>
         <th>注文ステータス</th>
-        <%= form_with model: @order, url: admin_order_path(@order), class:"update_status" do |f| %>
-          <td><%= f.select :order_status, options_for_select(Order.order_statuses.to_a, selected: @order.order_status_before_type_cast) %></td>
-          <td><%= f.submit "更新", class:'btn btn-info' %></td>
+        <%= form_with model: @order, url: admin_order_path, method: :PUT, local: true do |f| %>
+            <td><%= f.select :order_status, Order.order_statuses.map { |k, v| [t("orderes.order_status.#{k}"), v] }, :selected=> @order.order_status_before_type_cast  %></td>
+            <td><%= f.submit "更新", class: "btn btn-success" %></td>
         <% end %>
     </table>
   </div>
@@ -46,10 +46,12 @@
               <td><%= (order.item.price*1.10).floor %></td>
               <td><%= order.amount %></td>
               <td><%= (order.item.price*1.10).floor*order.amount %></td>
-              <%= form_with model: @order, url: admin_order_path(@order), method: :patch, class:"form-inline", local: true do |f| %>
-                  <td><%= f.select :making_status, OrderItem.making_statuses.keys %></td>
-                  <td><%= f.submit '更新'  ,class: "btn btn-success ml-4" %></td>
-                <% end %>
+              <%= form_with model: order, url: admin_order_item_path(order), method: :PATCH, local: true do |f| %>
+                <td><%= order.making_status %></td>
+                <%= f.hidden_field :order_id, :value => order.id %>
+                <td><%= f.select :making_status, OrderItem.making_statuses.map { |k, v| [t("orderes.order_status.#{k}"), v] }, :selected=> order.making_status_before_type_cast %></td>
+                <td><%= f.submit "更新", class: "btn btn-success" %></td>
+	      		  <% end %>
             </tr>
             <% end %>
           </tbody>
@@ -59,15 +61,15 @@
             <table class="ml-5">
             <tr>
               <td>商品合計</td>
-              <td class="order-box"><%= @order.total_payment %></td>
+              <td class="order-box"><%= @order.total_payment %>円</td>
             </tr>
             <tr>
               <td>送料</td>
-              <td class="order-box"><%= @order.shipping_fee %></td>
+              <td class="order-box"><%= @order.shipping_fee %>円</td>
             </tr>
             <tr>
               <td class="d-inline p-3 mb-2 bg-secondary text-white">請求金額  <i class="fas fa-hand-holding-usd"></i></td>
-              <td class="h2 order-box"><%= @order.total_payment+@order.shipping_fee %></td>
+              <td class="h2 order-box"><%= @order.total_payment+@order.shipping_fee %>円</td>
             </tr>
             </table>
         </div>
