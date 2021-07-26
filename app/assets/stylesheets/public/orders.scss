@@ -10,7 +10,8 @@
 }
 
 .main-visual-cart {
-  margin-left: 100px;
+  margin-left: 300px;
+  margin-bottom: 100px;
 }
 
 .header-confirm {
@@ -23,11 +24,64 @@
  opacity: 0.8;
 }
 
-.footer-confirm {
- height: 35vh;
- background-image: image-url('thankyou.jpeg');
+.body {
+  margin-bottom: 100px;
+}
+
+.h2 {
+  margin-left: 350px;
+  justify-content: center;
+  border-bottom: 6px double #000;
+}
+
+.text {
+ margin-top: 10%;
+ margin-bottom: 10%;
+ text-align: center;
+}
+
+.cart-step1 {
+ height: 25vh;
+ background-image: image-url('cart-step1.png');
  background-repeat: no-repeat;
  background-position: center;
- background-size: cover;
+ background-size: 60%;
  opacity: 0.8;
+}
+
+.cart-step2 {
+ height: 25vh;
+ background-image: image-url('cart-step2.png');
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: 40%;
+ opacity: 0.8;
+}
+
+.cart-step3 {
+ height: 25vh;
+ background-image: image-url('cart-step3.png');
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: 40%;
+ opacity: 0.8;
+}
+
+.cart-step4 {
+ height: 25vh;
+ background-image: image-url('cart-step4.png');
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: 40%;
+ opacity: 0.8;
+}
+
+.page_title {
+  margin-left: 10%;
+  width: 55%;
+  text-align: center;
+  color: #364e96;/*文字色*/
+  padding: 0.5em 0;/*上下の余白*/
+  border-top: solid 3px #364e96;/*上線*/
+  border-bottom: solid 3px #364e96;/*下線*/
 }
