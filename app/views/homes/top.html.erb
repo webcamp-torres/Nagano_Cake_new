@@ -17,16 +17,22 @@
           </div>
         </div>
 
-        <h3>新着商品</h3>
+        <h3 class="sub-title">New Items</h3>
+        
         <ul class="d-flex justify-content-left list-unstyled">
-          <% @items.each do |item| %>
-            <li class="col-2 mx-3">
-              <%= link_to (attachment_image_tag item, :image, size: "150x150", fallback: "no_image.jpg"), item_path(item.id)%>
+          
+          <% @items.first(4).each do |item| %>
+          
+            <li class="col">
+              <span class="img_container">
+              <%= link_to (attachment_image_tag item, :image, size: "200x200", fallback: "no_image.jpg"), item_path(item.id)%></span>
               <p class="mt-2"><%= item.name %></p>
               <p class="mt-2">¥ <%= item.price.to_s(:delimited) %></p>
             </li>
           <% end %>
+          
         </ul>
+        
         <p class="col-3 offset-10"><%= link_to "全ての商品を見る >", items_path %></p>
       </div>
     </div>

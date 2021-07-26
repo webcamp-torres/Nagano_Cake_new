@@ -1,9 +1,12 @@
 // Place all the styles related to the public/members controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.head_my_page {
-    font-weight: bold;
-}
-.subhead_my_page {
-    font-weight: bold;
+
+.header-mypage-item {
+ height: 25vh;
+ background-image: image-url('cake5.jpg');
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+ opacity: 0.8;
 }
