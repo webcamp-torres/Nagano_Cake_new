@@ -20,7 +20,6 @@ class Public::OrdersController < ApplicationController
     @order.member_id = current_member.id
     @order.save
     Delivery.find_or_create_by(member_id: current_member.id,name: @order.name,address: @order.address,postal_code: @order.postal_code)
-    redirect_to orders_complete_path
 
     @cart_items = current_member.cart_items
     @cart_items.each do |cart_item|
@@ -34,6 +33,8 @@ class Public::OrdersController < ApplicationController
         flash[:danger] = "注文内容に不備があります。"
         redirect_to new_member_path
       end
+    @cart_items.delete_all
+    redirect_to orders_complete_path
     end
   end
 
@@ -61,6 +62,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def complete
+
   end
 
   private
