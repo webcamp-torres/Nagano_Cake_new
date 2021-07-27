@@ -31,7 +31,7 @@
 
 * Javascript
 
-# チーム -Torres-
+# チーム -Torres- ※編集中
 * [わじー](https://github.com/kgdskc)
 
 | Left align | Right align | Center align |
