@@ -10,7 +10,8 @@
 * 支払方法はクレジットカード、銀行振込から選択できる
 
 # ER図
-https://drive.google.com/file/d/15HN-qe4qlkYj6cQLX78tVDFXgCJuRruo/view?usp=sharing
+![Torres_ER](https://user-images.githubusercontent.com/82434457/127075889-a8119918-8dd2-47f9-be17-cff735242033.png)
+
 
 * System dependencies
 
