@@ -15,6 +15,17 @@
         <dd class="col-10 p-0"><%= f.text_field :price, placeholder: '1000', class: 'form-control col-11' %></dd>
         <dd style="margin-left: -50px;">円</dd>
       </div>
+      <div class="sale-status">
+         <%= f.label :sales_status %>
+        <div>
+          <%= f.radio_button :sales_status, true %>
+          <%= f.label :sales_status, '販売中', value: true %>
+        </div>
+        <div>
+          <%= f.radio_button :sales_status, false %>
+          <%= f.label :sales_status, '販売停止中', value: false %>
+        </div>
+      </div>
     </dl>
     <%= f.submit "新規登録", class: 'btn btn-success btn-lg py-3 col-3 offset-4' %>
   <% end %>

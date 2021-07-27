@@ -1,8 +1,8 @@
 class Public::ItemsController < ApplicationController
-  before_action :authenticate_member!,except: [:index, :show] 
-  
+  before_action :authenticate_member!,except: [:index, :show]
+
   def index
-    @items = Item.all
+    @items = Item.all.order(created_at: :desc)
     @genres = Genre.all
     @genre = Genre.new
   end
