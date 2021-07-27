@@ -34,9 +34,11 @@
 # チーム -Torres- ※編集中
 * [わじー](https://github.com/kgdskc)
 
-| Left align | Right align | Center align |
-|:-----------|------------:|:------------:|
+| ![代替テキスト](![kenta](https://user-images.githubusercontent.com/82434457/127114591-43a2aad1-cbfb-4804-b0af-33f1b51ffedd.png)
+) | Right align | Center align |
+|:----------:|:-----------:|:------------:|
 | [わじー](https://github.com/kgdskc)| This        | This         |
+| column     | column      | column       |
 
 
 
