@@ -32,6 +32,11 @@ $ rails cd Nagano_Cake_new
 $ bundle install
 $ rails s
 ```
+## 管理者用アカウント
+* URL : "/admins/sign_in"
+* email : xxx@xxx
+* password : xxxxxx
+
 
 # 使用言語
 * HTNL&CSS
