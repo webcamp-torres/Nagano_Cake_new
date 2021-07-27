@@ -20,7 +20,7 @@
 <img width="715" alt="アプリケーション詳細設計書_管理者側" src="https://user-images.githubusercontent.com/82434457/127076954-582e6a11-7175-490c-9d94-662c4f981c29.png">
 
 # デモ
-![image](https://user-images.githubusercontent.com/82434457/127079570-3e8a5148-6e03-4907-a957-63f844b353d4.png)
+![Animated GIF-downsized](https://user-images.githubusercontent.com/82434457/127080161-19f87854-c9f9-462d-bab1-13b36758ae9a.gif)
 
 # 環境
 
