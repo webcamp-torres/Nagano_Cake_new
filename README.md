@@ -32,11 +32,9 @@
 * Javascript
 
 # チーム -Torres-
-https://github.com/orgs/webcamp-torres/people/kgdskc
+* [わじー](https://github.com/orgs/webcamp-torres/people/kgdskc)
 
 
-
-# ライセンス
 
 
 
