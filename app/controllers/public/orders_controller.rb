@@ -29,12 +29,12 @@ class Public::OrdersController < ApplicationController
         amount: cart_item.amount,
         price: (cart_item.item.price * 1.1).floor.to_s(:delimited),
         )
+        @cart_items.delete_all
+        redirect_to orders_complete_path
       else
         flash[:danger] = "注文内容に不備があります。"
         redirect_to new_member_path
       end
-    @cart_items.delete_all
-    redirect_to orders_complete_path
     end
   end
 
