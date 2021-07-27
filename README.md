@@ -1,6 +1,6 @@
 # EC site development
 
-長野県にある小さな洋菓子店「ながのCAKE」の商品を通販するためのECサイト開発。
+長野県にある小さな洋菓子店「ながのCAKE」の商品を通販するためのECサイト開発
 
 # サイト概要
 * 通販では注文に応じて製作する受注生産型としている
@@ -27,7 +27,6 @@ $ rails db:seed
 $ rails cd Nagano_Cake_new
 $ bundle install
 $ rails s
-
 ```
 
 # 使用言語
@@ -44,6 +43,3 @@ $ rails s
 * [makisan](https://github.com/makisan3)
 * [megu](https://github.com/ogmegumi)
 * [waji-](https://github.com/kgdskc)
-
-
-
