@@ -50,7 +50,7 @@ $ rails s
 # チーム -Torres-
 
 |[kenta](https://github.com/Kenta-Sugaya)|[makisan](https://github.com/makisan3)|[megu](https://github.com/ogmegumi)|[waji-](https://github.com/kgdskc)|
-|-|-|-|-|
+|:-:|:-:|:-:|:-:|
 |<a href="https://github.com/Kenta-Sugaya"><img src="https://user-images.githubusercontent.com/82434457/127173633-9fb05797-8d23-4aa6-b90c-ac80a1d2a13c.png" width="80" height="80">|<a href="https://github.com/makisan3"><img src="https://user-images.githubusercontent.com/82434457/127173656-4205492d-1508-4190-b5d3-2115ab894bd0.JPG" width="80" height="80">|<a href="https://github.com/ogmegumi"><img src="https://user-images.githubusercontent.com/82434457/127173679-170a1f68-a713-4fc1-899d-de493cb9c747.png" width="80" height="80">|<a href="https://github.com/kgdskc"><img src="https://user-images.githubusercontent.com/82434457/127173695-3141adc5-7e2f-4e06-a54c-326ff8b5b27a.png" width="80" height="80">|
 |@Kenta-Sugaya|@makisan3|@ogmegumi|@kgdskc|
 
