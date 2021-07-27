@@ -16,9 +16,19 @@
 ## 顧客側(public)
 <img width="727" alt="アプリケーション詳細設計書_顧客側" src="https://user-images.githubusercontent.com/82434457/127076965-03a1770f-1363-4df1-9d52-ec25b09ffcd0.png">
 
-## 管理者側
+## 管理者側(admin)
 <img width="715" alt="アプリケーション詳細設計書_管理者側" src="https://user-images.githubusercontent.com/82434457/127076954-582e6a11-7175-490c-9d94-662c4f981c29.png">
 
+# デモ
+https://user-images.githubusercontent.com/82434457/127078067-e4d65b8a-984c-4611-8676-a82cf054be43.mov
+
+# 環境
+
+# インストール
+
+# チーム
+
+# ライセンス
 
 * System dependencies
 
