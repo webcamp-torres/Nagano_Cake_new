@@ -19,8 +19,16 @@
 ## 管理者側(admin)
 <img width="715" alt="アプリケーション詳細設計書_管理者側" src="https://user-images.githubusercontent.com/82434457/127076954-582e6a11-7175-490c-9d94-662c4f981c29.png">
 
-# デモ
-![Animated GIF-downsized (1)](https://user-images.githubusercontent.com/82434457/127080444-f103f4a4-afaa-4894-8a73-42998d400487.gif)
+# 環境構築
+```
+$ git clone git@github.com:webcamp-torres/Nagano_Cake_new.git
+$ rails db:migrate
+$ rails db:seed
+$ rails cd Nagano_Cake_new
+$ bundle install
+$ rails s
+
+```
 
 # 使用言語
 * HTNL&CSS
@@ -31,15 +39,11 @@
 
 * Javascript
 
-# チーム -Torres- ※編集中
-* [わじー](https://github.com/kgdskc)
-
-| ![代替テキスト](![kenta](https://user-images.githubusercontent.com/82434457/127114591-43a2aad1-cbfb-4804-b0af-33f1b51ffedd.png)
-) | Right align | Center align |
-|:----------:|:-----------:|:------------:|
-| [わじー](https://github.com/kgdskc)| This        | This         |
-| column     | column      | column       |
-
+# チーム -Torres-
+* [kenta](https://github.com/Kenta-Sugaya)
+* [makisan](https://github.com/makisan3)
+* [megu](https://github.com/ogmegumi)
+* [waji-](https://github.com/kgdskc)
 
 
 
