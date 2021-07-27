@@ -34,6 +34,9 @@
 # チーム -Torres-
 * [わじー](https://github.com/kgdskc)
 
+| Left align | Right align | Center align |
+|:-----------|------------:|:------------:|
+| [わじー](https://github.com/kgdskc)| This        | This         |
 
 
 
