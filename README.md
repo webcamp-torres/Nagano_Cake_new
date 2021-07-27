@@ -22,27 +22,21 @@
 # デモ
 ![Animated GIF-downsized (1)](https://user-images.githubusercontent.com/82434457/127080444-f103f4a4-afaa-4894-8a73-42998d400487.gif)
 
-# 環境
+# 使用言語
+* HTNL&CSS
 
-# インストール
+* Ruby (2.6.3)
 
-# チーム
+* Ruby on Rails (5.2.6)
+
+* Javascript
+
+# チーム -Torres-
+https://github.com/orgs/webcamp-torres/people/kgdskc
+
+
 
 # ライセンス
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
