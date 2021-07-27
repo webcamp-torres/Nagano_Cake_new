@@ -53,7 +53,7 @@ $ rails s
 * [megu](https://github.com/ogmegumi)
 * [waji-](https://github.com/kgdskc)
 
-<img src="https://user-images.githubusercontent.com/82434457/127173633-9fb05797-8d23-4aa6-b90c-ac80a1d2a13c.png" alt="kenta" 80x80|
-<img src="https://user-images.githubusercontent.com/82434457/127173656-4205492d-1508-4190-b5d3-2115ab894bd0.JPG" alt="makisan" 80x80|
+<img src="https://user-images.githubusercontent.com/82434457/127173633-9fb05797-8d23-4aa6-b90c-ac80a1d2a13c.png" alt="kenta" 80x80>|
+<img src="https://user-images.githubusercontent.com/82434457/127173656-4205492d-1508-4190-b5d3-2115ab894bd0.JPG" alt="makisan" 80x80>|
 
 
