@@ -12,6 +12,13 @@
 # ER図
 ![Torres_ER](https://user-images.githubusercontent.com/82434457/127075889-a8119918-8dd2-47f9-be17-cff735242033.png)
 
+# アプリケーション詳細設計書
+## 顧客側(public)
+<img width="727" alt="アプリケーション詳細設計書_顧客側" src="https://user-images.githubusercontent.com/82434457/127076965-03a1770f-1363-4df1-9d52-ec25b09ffcd0.png">
+
+## 管理者側
+<img width="715" alt="アプリケーション詳細設計書_管理者側" src="https://user-images.githubusercontent.com/82434457/127076954-582e6a11-7175-490c-9d94-662c4f981c29.png">
+
 
 * System dependencies
 
