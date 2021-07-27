@@ -53,7 +53,7 @@ $ rails s
 * [megu](https://github.com/ogmegumi)
 * [waji-](https://github.com/kgdskc)
 
-[kenta](https://github.com/Kenta-Sugaya)|[makisan](https://github.com/makisan3)|[makisan](https://github.com/makisan3)
+[kenta](https://github.com/Kenta-Sugaya)|[makisan](https://github.com/makisan3)
 -|-
 <a href="https://github.com/Kenta-Sugaya"><img src="https://user-images.githubusercontent.com/82434457/127173633-9fb05797-8d23-4aa6-b90c-ac80a1d2a13c.png" width="80" height="80">|<a href="https://github.com/makisan3"><img src="https://user-images.githubusercontent.com/82434457/127173656-4205492d-1508-4190-b5d3-2115ab894bd0.JPG" width="80" height="80">|
 -|-
