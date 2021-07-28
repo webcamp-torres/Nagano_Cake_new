@@ -25,11 +25,11 @@
 
 # 環境構築
 ```
-$ git clone git@github.com:webcamp-torres/Nagano_Cake_new.git
-$ rails db:migrate
-$ rails db:seed
+$ git clone https://github.com/webcamp-torres/Nagano_Cake_new.git
 $ rails cd Nagano_Cake_new
 $ bundle install
+$ rails db:migrate
+$ rails db:seed
 $ rails s
 ```
 ### 管理者用アカウント
