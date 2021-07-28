@@ -1,0 +1,21 @@
+<div class="header-show"></div>
+  <div class= "container mb-5">
+    <h3 class="page_title mt-5">Item Details</h3>
+
+     <div class = "row ml-5 pt-5 text-right">
+       <div class = "col-md-6">
+         <%= attachment_image_tag @item, :image, size: "350x350", fallback: "no_image.jpg" %>
+       </div>
+       <div class = "col-md-3 mb-5">
+         <%= form_with model: @cart_item, url: cart_items_path, local:true do |f| %>
+             <p><%= @item.name %></p><br>
+             <p><%= @item.introduction %></p><br>
+             <p>¥<%= (@item.price*1.10).floor %>（税込）</p><br>
+             <p><%= f.select :amount, [["1", 1], ["2", 2], ["3", 3], ["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10]], include_blank: "個数を選択" %></p><br>
+             <p><%=f.hidden_field :item_id, value: @item.id %></p> <!--隠れたfield情報が見えないvalue値としては@item.idをいれる-->
+             <p><%= f.submit 'カートに入れる', class: "btn btn-primary" %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

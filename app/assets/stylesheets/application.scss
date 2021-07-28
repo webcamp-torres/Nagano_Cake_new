@@ -1,0 +1,99 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import 'bootstrap';
+ @import 'font-awesome-sprockets';
+ @import 'font-awesome';
+ 
+ .navbar {
+     margin-top: 0;
+ }
+ 
+ p {
+     font-family:  Courier, "Segoe Print", sans-serif;
+ }
+ 
+
+ .top-img {
+　wide: 100%;
+　height: 300px; /* 全画面表示 */
+  background-repeat: no-repeat;
+  position:　absolute;
+  background-position: center;
+}
+
+    
+.top-intro {
+  color: #fff;
+  transition-property: color text-shadow;
+  transition-duration: 3s;
+  
+}
+.top-intro:hover {
+    color: #FFCC66;
+    text-shadow: 2px 1px 0 #000
+}
+.top-intro2 {
+  font-family: "ico" Courier, "Segoe Print", sans-serif;
+  font-size: 20px;
+  top: 100px;
+  right: 50px;
+  position: relative;
+  text-shadow: 2px 1px 0 #000
+  
+  
+}
+.top-title{
+  font-family: "ico" Courier, "Segoe Print", sans-serif;
+  
+  font-size: 150px;
+  margin:0 auto;
+}
+.sub-title {
+  font-family: "ico" Courier, "Segoe Print", sans-serif;
+  font-size: 60px;
+}
+.header-name {
+   padding-top: 17px;
+   padding-right: 10px;
+   font-weight: bold;
+   color: #444444;
+}
+.nav {
+    padding-top: 8px;
+   padding-right: 10px;
+   font-weight: bold;
+   color: #444444;
+}
+
+.info {
+    background: #F2F2F2;
+}
+.btn-partial-line {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.2em 0.4em;
+  text-decoration: none;
+  border-bottom: solid 2px #444444;
+  border-left: solid 2px #444444;
+  color: #444444;
+  transition: .4s;
+}
+
+.btn-partial-line:hover {
+  padding-left: 0.5em;
+  padding-right: 0.3em;
+}

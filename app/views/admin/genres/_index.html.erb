@@ -1,0 +1,5 @@
+<div class="roy d-flex justify-content-center">
+      <% @genres.each do |genre| %>
+        <%= link_to genre.name, search_path('search[value]': genre.id, 'search[how]': "match"), class: "btn btn-outline-secondary" %>
+      <% end %>
+    </div>

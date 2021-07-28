@@ -1,0 +1,43 @@
+ <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+      <% if member_signed_in? %>  
+        <a class="navbar-brand" href="/"><span>Nagano Cake</span></a>
+      <% elsif admin_signed_in? %>
+        <a class="navbar-brand" href="/admins"><span>Nagano Cake</span></a>
+      <% else %>
+        <a class="navbar-brand" href="/"><span>Nagano Cake</span></a>
+      <% end %>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="nav navbar-nav ml-auto">
+            <% if member_signed_in? %>
+              <li class="header-name">
+                ようこそ、<%= current_member.last_name %><%= current_member.first_name %>さん！
+              </li>
+              <li class="nav"><%= link_to "my page", members_my_page_path(current_member), class: "nav-link navbar-light"%></li>
+              <li class="nav"><%= link_to "items", items_path, class: "nav-link navbar-light"%></li>
+              <li class="nav"><%= link_to "cart", cart_items_path, class: "nav-link navbar-light"%></li>
+              <li class="nav"><%= link_to "logout", destroy_member_session_path, method: :delete, class: "nav-link navbar-light"%></li>
+              <li><%= render 'layouts/search' %></li>
+            <% elsif admin_signed_in? %>
+            　<li class="nav"><%= link_to "items", admin_items_path, class: "nav-link navbar-light"%></li>
+            　<li class="nav"><%= link_to "members", admin_members_path, class: "nav-link navbar-light"%></li>
+            　<li class="nav"><%= link_to "orders", admins_path, class: "nav-link navbar-light"%></li>
+            　<li class="nav"><%= link_to"genres", admin_genres_path, class: "nav-link navbar-light"%></li>
+            　<li class="nav"><%= link_to"logout", destroy_admin_session_path, method: :delete, class: "nav-link navbar-light"%></li>
+            　<li class="nav"><%= render 'layouts/search' %></li>
+            <% else %>
+              <li class="nav"><%= link_to "about", about_path, class: "nav-link navbar-light"%></li>
+              <li class="nav"><%= link_to "items", items_path, class: "nav-link navbar-light"%></li>
+              <li class="nav"><%= link_to "sign up", new_member_registration_path, data: {"turbolinks" => false}, class: "nav-link navbar-light"%></li>
+              <li class="nav"><%= link_to "login", new_member_session_path, class: "nav-link navbar-light"%></li>
+            <% end %>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+ </header>
