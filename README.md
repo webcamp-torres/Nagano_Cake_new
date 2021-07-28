@@ -26,7 +26,7 @@
 # 環境構築
 ```
 $ git clone https://github.com/webcamp-torres/Nagano_Cake_new.git
-$ rails cd Nagano_Cake_new
+$ cd Nagano_Cake_new
 $ bundle install
 $ rails db:migrate
 $ rails db:seed
